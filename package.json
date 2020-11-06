@@ -6,8 +6,9 @@
   "scripts": {
     "dev": "parcel src/index.html",
     "build": "parcel build src/index.html --public-url /parcel-practic/",
-    "deploy": "gh-pages -d dist", 
-    "predeploy": "npm run build"
+    "deploy": "gh-pages -d dist",
+    "predeploy": "npm run build",
+    "server": "json-server --watch db.json -p 4040 -d 300"
   },
   "repository": {
     "type": "git",
@@ -21,7 +22,9 @@
   },
   "homepage": "https://andreymashko7.github.io/parcel-practic",
   "devDependencies": {
+    "json-server": "^0.16.2",
     "parcel-bundler": "^1.12.4",
+    "parcel-plugin-handlebars-precompile": "^1.0.2",
     "parcel-plugin-nuke-dist": "^1.0.1"
   },
   "dependencies": {

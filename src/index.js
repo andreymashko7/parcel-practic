@@ -1,3 +1,4 @@
-import "./css/styles.css";
-
-console.log("Мастерская: деплой билда от Parcel на GitHub Pages");
+import './js/r - get';
+// import './js/c - post';
+// import './js/u - patch';
+// import './js/d - delete';
