@@ -53,6 +53,7 @@ function addToWatched() {
 //-----------Queued--------
 let localStorageQueuedData = localStorage.getItem('queueMovieArr');
 console.log(JSON.parse(localStorageQueuedData).length === 0);
+console.log(localStorageQueuedData);
 if (JSON.parse(localStorageQueuedData).length > 0) {
   addToQueueMovieBtn.textContent = 'Delete from Queue';
   addToQueueMovieBtn.classList.add('delete-movie');
@@ -102,37 +103,12 @@ function changeAddWatchedBtnTextContent() {
 
 // ---------------------------------------------------------------------------------
 
-const watchedEl = document.querySelector('.btn-watched');
-const queueEl = document.querySelector('.btn-queue');
+const btnWatched = document.querySelector('.btn-watched');
+const btnQueue = document.querySelector('.btn-queue');
 
-watchedEl.addEventListener('click', listWatchedLoad);
+btnWatched.addEventListener('click', checkWatchedList);
+btnQueue.addEventListener('click', checkQueueList);
 
-function listWatchedLoad() {
-// if
-  // JSON.parse(localStorageWatchedData).find(el => el.name === movieObj2.name);
-  // const data = localStorage.getItem('watchedMovieArr');
-  // const watchedList = JSON.parse(localStorage.getItem('watchedMovieArr')) || [];
+console.log(localStorageWatchedData);
 
-  // console.log(watchedList);
-}
-
-// console.log(localStorage.getItem('watchedMovieArr', JSON.parse(queueMovieArr)));
-
-// console.log(movieObj1);
-
-function checkList(list, movie, btn, state) {
-    const { id } = movie;
-    if (list.find((item) => item.id === id)) {
-      list = list.filter((item) => item.id !== id);
-
-      localStorage.setItem(state, JSON.stringify(list));
-      btn.classList.remove("details__btn--in-the-list");
-      btn.textContent = `Add to ${state}`;
-    } else {
-      list.push(movie);
-      localStorage.setItem(state, JSON.stringify(list));
-      btn.classList.add("details__btn--in-the-list");
-      btn.textContent = `In ${state} list`;
-    }
-  }
-}
+function checkWatchedList() {}
