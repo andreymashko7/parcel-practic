@@ -103,12 +103,16 @@ function changeAddWatchedBtnTextContent() {
 
 // ---------------------------------------------------------------------------------
 
-const btnWatched = document.querySelector('.btn-watched');
+const btnWatched = document.querySelector('.btn-watch');
 const btnQueue = document.querySelector('.btn-queue');
 
 btnWatched.addEventListener('click', checkWatchedList);
 btnQueue.addEventListener('click', checkQueueList);
 
-console.log(localStorageWatchedData);
+function checkWatchedList() {
+  console.log(localStorageWatchedData);
+}
 
-function checkWatchedList() {}
+function checkQueueList() {
+  console.log('qqqqq');
+}
